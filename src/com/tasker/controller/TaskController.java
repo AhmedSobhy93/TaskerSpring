@@ -29,7 +29,7 @@ public class TaskController {
 	
 	@RequestMapping(value="/taskform")
 	public ModelAndView taskForm(){
-		return new ModelAndView("task/taskform", "task-entity", new Task());
+		return new ModelAndView("/task/taskform", "task-entity", new Task());
 	}
 	
 	@RequestMapping(value="save",method=RequestMethod.POST)
@@ -37,4 +37,6 @@ public class TaskController {
 		taskDao.save(task);
 		return new ModelAndView("index");
 	}
+	
+	
 }
